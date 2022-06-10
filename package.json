@@ -1,0 +1,17 @@
+{
+  "name": "sample-contract",
+  "version": "1.0.0",
+  "description": "これはSTEPNダミーのコントラクトです。 基本的な機能やUIは似せますが、モバイルアプリではなくブラウザ上で動かすので、走る機能については実装しません。ではどのようにエナジーを消費させるのかと言うと、ボタン押すだけで走ったことにできるように実装したいと思います。",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0"
+  }
+}

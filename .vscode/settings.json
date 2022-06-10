@@ -1,0 +1,4 @@
+{
+  "solidity.compileUsingLocalVersion": "",
+  "solidity.packageDefaultDependencies": "node_modules"
+}
