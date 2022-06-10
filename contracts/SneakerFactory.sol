@@ -11,11 +11,16 @@ contract SneakerFactory is Ownable {
     uint8 shoe_type; // 1: WALKER, 2: JOGGER, 3: RUNNER, 4: TRAINER
   }
 
+  modifier checkShoeType(uint8 _shoe_type) {
+    require(_shoe_type >= 1 && _shoe_type <= 4);
+    _;
+  }
+
   Sneaker[] public sneakers;
 
   mapping (uint => address) public sneakerToOwner;
 
-  function _createSneaker(uint _id, uint8 _shoe_type) private {
+  function _createSneaker(uint _id, uint8 _shoe_type) private checkShoeType(_shoe_type) {
     sneakers.push(Sneaker(_id, _shoe_type));
     sneakerToOwner[_id] = msg.sender;
     emit NewSneaker(_id, _shoe_type);

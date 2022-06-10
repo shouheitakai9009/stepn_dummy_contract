@@ -5,17 +5,23 @@ contract("SneakerFactory", accounts => {
   let [alice, bob] = accounts;
 
   describe("靴を作成する", () => {
-    it("オーナーが靴を作成すると成功すること", async () => {
+
+    describe("オーナーが靴を作成する", () => {
       const contractInstance = await SneakerFactory.new();
       const result = await contractInstance.createSneaker(sneakerNames[0], 3, { from: alice });
-      assert.equal(result.receipt.status, true);
-
       const sneakerId = result.logs[0].args.id;
       const shoeType = result.logs[0].args.shoe_type;
-      assert.equal(shoeType, 3)
 
-      const owner = await contractInstance.sneakerToOwner(sneakerId);
-      assert.equal(owner, alice)
+      it("靴を作成しレシートが受領される", async () => {
+        assert.equal(result.receipt.status, true);
+      })
+      it("種類が指定した値であること", async () => {
+        assert.equal(shoeType, 3)
+      })
+      it("靴の作成者が間違いなくオーナーであること", async () => {
+        const owner = await contractInstance.sneakerToOwner(sneakerId);
+        assert.equal(owner, alice)
+      })
     })
     it("オーナー以外が靴を作成すると失敗すること", async () => {
       const contractInstance = await SneakerFactory.new();
