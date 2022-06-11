@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.14;
 
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import { ISneakerData } from "./interface/ISneakerData.sol";
 import { GenerateRandom } from "./utility/GenerateRandom.sol";
 
-contract SneakerFactory is Ownable, GenerateRandom {
+contract SneakerFactory is Ownable, ERC721('STEPN DUMMY', 'STD'), GenerateRandom {
 
   event NewSneaker(uint identifier, ISneakerData.ShoeType shoeType, ISneakerData.Rarity rarity);
 
@@ -26,43 +27,55 @@ contract SneakerFactory is Ownable, GenerateRandom {
   }
 
   ISneakerData.Sneaker[] private _sneakers;
+  uint private _identifier = 0;
 
   mapping (uint => address) public sneakerToOwner;
   mapping (address => ISneakerData.Sneaker[]) private _ownerToSneakers;
 
   function _createSneaker(
-    uint _identifier,
     ISneakerData.ShoeType _shoeType,
     ISneakerData.Rarity _rarity
   )
     private
   {
+    uint identifier = _generateIdentifier();
+    uint32 efficiency = _generateStatusBasedOnRarity(_rarity);
+    uint32 luck = _generateStatusBasedOnRarity(_rarity);
+    uint32 comfort = _generateStatusBasedOnRarity(_rarity);
+    uint32 resiliense = _generateStatusBasedOnRarity(_rarity);
     ISneakerData.Sneaker memory _newSneaker = ISneakerData.Sneaker(
-      _identifier,
+      identifier,
       _shoeType,
       _rarity,
       0,
       100,
+      0,
       true,
-      _generateStatusBasedOnRarity(_rarity),
-      _generateStatusBasedOnRarity(_rarity),
-      _generateStatusBasedOnRarity(_rarity),
-      _generateStatusBasedOnRarity(_rarity),
+      efficiency,
+      luck,
+      comfort,
+      resiliense,
+      efficiency,
+      luck,
+      comfort,
+      resiliense,
+      0,
+      false,
+      0,
       0
     );
     _sneakers.push(_newSneaker);
     _ownerToSneakers[msg.sender].push(_newSneaker);
-    sneakerToOwner[_identifier] = msg.sender;
-    emit NewSneaker(_identifier, _shoeType, _rarity);
+    sneakerToOwner[identifier] = msg.sender;
+    emit NewSneaker(identifier, _shoeType, _rarity);
   }
 
-  function _generateIdentifier(string memory _str)
+  function _generateIdentifier()
     private
-    pure
     returns (uint)
   {
-    uint rand = uint(keccak256(abi.encode(_str)));
-    return rand % (10 ** 16);
+    _identifier++;
+    return _identifier;
   }
 
   function _generateStatusBasedOnRarity(ISneakerData.Rarity _rarity)
@@ -82,7 +95,6 @@ contract SneakerFactory is Ownable, GenerateRandom {
   }
 
   function createSneaker(
-    string memory _name,
     ISneakerData.ShoeType _shoeType,
     ISneakerData.Rarity _rarity
   )
@@ -92,8 +104,7 @@ contract SneakerFactory is Ownable, GenerateRandom {
     validateShoeType(_shoeType)
     validateRarity(_rarity)
   {
-    uint identifier = _generateIdentifier(_name);
-    _createSneaker(identifier, _shoeType, _rarity);
+    _createSneaker( _shoeType, _rarity);
   }
 
   function getSneakers()
@@ -105,12 +116,11 @@ contract SneakerFactory is Ownable, GenerateRandom {
     return _sneakers;
   }
 
-  function getOwnerToSneakers()
+  function getOwnerToSneakers(address _owner)
     public
     view
-    onlyOwner
     returns (ISneakerData.Sneaker[] memory)
   {
-    return _ownerToSneakers[msg.sender];
+    return _ownerToSneakers[_owner];
   }
 }

@@ -1,6 +1,5 @@
 const SneakerFactory = artifacts.require("SneakerFactory");
 
-const sneakerNames = ["#1", "#2", "#3", "#4"];
 contract("SneakerFactory", accounts => {
   let [alice, bob] = accounts;
   let sneakerInstance, result;
@@ -11,10 +10,10 @@ contract("SneakerFactory", accounts => {
   
     beforeEach(async () => {
       sneakerInstance = await SneakerFactory.new();
-      result = await sneakerInstance.createSneaker(sneakerNames[0], 0, 0, { from: alice });
-      await sneakerInstance.createSneaker(sneakerNames[1], 0, 1, { from: alice });
-      await sneakerInstance.createSneaker(sneakerNames[2], 0, 2, { from: alice });
-      await sneakerInstance.createSneaker(sneakerNames[3], 0, 3, { from: alice });
+      result = await sneakerInstance.createSneaker(0, 0, { from: alice });
+      await sneakerInstance.createSneaker(0, 1, { from: alice });
+      await sneakerInstance.createSneaker(0, 2, { from: alice });
+      await sneakerInstance.createSneaker(0, 3, { from: alice });
       identifier = result.logs[0].args.identifier;
       shoeType = result.logs[0].args.shoeType;
       shoeRarity = result.logs[0].args.rarity;
@@ -30,7 +29,7 @@ contract("SneakerFactory", accounts => {
       assert.equal(owner, alice)
     })
     it("オーナーが保持する靴数が1になっていること", async () => {
-      const sneakers = await sneakerInstance.getOwnerToSneakers({ from: alice });
+      const sneakers = await sneakerInstance.getOwnerToSneakers(alice);
       assert.equal(sneakers.length, 4);
     })
     it("靴一覧が1の長さになっていること", async () => {
@@ -70,7 +69,7 @@ contract("SneakerFactory", accounts => {
     it("間違ったシューズ種類でオーナーが靴を作成する", async () => {
       try {
         sneakerInstance = await SneakerFactory.new();
-        await sneakerInstance.createSneaker(sneakerNames[0], 5, 0, { from: alice });
+        await sneakerInstance.createSneaker(5, 0, { from: alice });
       } catch (error) {
         assert.equal(error.data.name, "RuntimeError")
       }
@@ -78,7 +77,7 @@ contract("SneakerFactory", accounts => {
     it("間違ったレア度でオーナーが靴を作成する", async () => {
       try {
         sneakerInstance = await SneakerFactory.new();
-        await sneakerInstance.createSneaker(sneakerNames[0], 0, 4, { from: alice });
+        await sneakerInstance.createSneaker(0, 4, { from: alice });
       } catch (error) {
         assert.equal(error.data.name, "RuntimeError")
       }
@@ -86,7 +85,7 @@ contract("SneakerFactory", accounts => {
     it("オーナー以外が靴を作成すると失敗すること", async () => {
       try {
         sneakerInstance = await SneakerFactory.new();
-        await sneakerInstance.createSneaker(sneakerNames[0], 0, 0, { from: bob });
+        await sneakerInstance.createSneaker(0, 0, { from: bob });
       } catch (error) {
         assert.equal(error.reason, "Ownable: caller is not the owner");
       }
