@@ -1,7 +1,7 @@
 {
   "contractName": "ISneakerData",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interface/ISneakerData.sol\":\"ISneakerData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interface/ISneakerData.sol\":{\"keccak256\":\"0x17a15d7d17bb8ebfe673ea841d29bad2201d693d37e9a2bf89f25784eb714ed4\",\"urls\":[\"bzz-raw://815186f5094a13f91e44dae7a5429c16659694758785019a83737f83fba677ee\",\"dweb:/ipfs/Qmdu57FHQkVJnZVDKebVXZuupa4TSZvuRUy6Yu9QMVdViZ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interface/ISneakerData.sol\":\"ISneakerData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interface/ISneakerData.sol\":{\"keccak256\":\"0xe5babe194d898b89eda553cf834278afe05c425b9da715609fe2bb26a016f12c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ad7034104769a20d4043fb4ad8cff3bc5a9796e9180a024189627fae1dd16dd3\",\"dweb:/ipfs/QmVZrxarZ3bERKaCYpaTiZw6LTcptUQXAss3xt8jNiJCtQ\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -9,20 +9,21 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.8.14;\n\ninterface ISneakerData {\n  enum ShoeType {\n    WAKER,\n    JOGGER,\n    RUNNER,\n    TRAINER\n  }\n  enum Rarity {\n    COMMON,\n    UNCOMMON,\n    RARE,\n    EPIC\n  }\n  struct Sneaker {\n    uint identifier;\n    ShoeType shoeType;\n    Rarity rarity;\n    uint8 level;\n    uint8 durability;\n    bool putOn;\n    uint32 baseEfficiency;\n    uint32 baseLuck;\n    uint32 baseComfort;\n    uint32 baseResiliense;\n    uint32 pointNum;\n  }\n}",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.14;\n\ninterface ISneakerData {\n  enum ShoeType {\n    WAKER,\n    JOGGER,\n    RUNNER,\n    TRAINER\n  }\n  enum Rarity {\n    COMMON,\n    UNCOMMON,\n    RARE,\n    EPIC\n  }\n  struct Sneaker {\n    uint identifier;\n    ShoeType shoeType;\n    Rarity rarity;\n    uint8 level;\n    uint8 durability;\n    bool putOn;\n    uint32 baseEfficiency;\n    uint32 baseLuck;\n    uint32 baseComfort;\n    uint32 baseResiliense;\n    uint32 pointNum;\n  }\n}",
   "sourcePath": "/Users/takaishouhei/Desktop/stepn_dummy_contract/contracts/interface/ISneakerData.sol",
   "ast": {
     "absolutePath": "project:/contracts/interface/ISneakerData.sol",
     "exportedSymbols": {
       "ISneakerData": [
-        434
+        482
       ]
     },
-    "id": 435,
+    "id": 483,
+    "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 398,
+        "id": 446,
         "literals": [
           "solidity",
           "^",
@@ -30,7 +31,7 @@
           ".14"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:3"
+        "src": "39:24:3"
       },
       {
         "abstract": false,
@@ -39,103 +40,103 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 434,
+        "id": 482,
         "linearizedBaseContracts": [
-          434
+          482
         ],
         "name": "ISneakerData",
-        "nameLocation": "36:12:3",
+        "nameLocation": "75:12:3",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ISneakerData.ShoeType",
-            "id": 403,
+            "id": 451,
             "members": [
               {
-                "id": 399,
+                "id": 447,
                 "name": "WAKER",
-                "nameLocation": "73:5:3",
+                "nameLocation": "112:5:3",
                 "nodeType": "EnumValue",
-                "src": "73:5:3"
+                "src": "112:5:3"
               },
               {
-                "id": 400,
+                "id": 448,
                 "name": "JOGGER",
-                "nameLocation": "84:6:3",
+                "nameLocation": "123:6:3",
                 "nodeType": "EnumValue",
-                "src": "84:6:3"
+                "src": "123:6:3"
               },
               {
-                "id": 401,
+                "id": 449,
                 "name": "RUNNER",
-                "nameLocation": "96:6:3",
+                "nameLocation": "135:6:3",
                 "nodeType": "EnumValue",
-                "src": "96:6:3"
+                "src": "135:6:3"
               },
               {
-                "id": 402,
+                "id": 450,
                 "name": "TRAINER",
-                "nameLocation": "108:7:3",
+                "nameLocation": "147:7:3",
                 "nodeType": "EnumValue",
-                "src": "108:7:3"
+                "src": "147:7:3"
               }
             ],
             "name": "ShoeType",
-            "nameLocation": "58:8:3",
+            "nameLocation": "97:8:3",
             "nodeType": "EnumDefinition",
-            "src": "53:66:3"
+            "src": "92:66:3"
           },
           {
             "canonicalName": "ISneakerData.Rarity",
-            "id": 408,
+            "id": 456,
             "members": [
               {
-                "id": 404,
+                "id": 452,
                 "name": "COMMON",
-                "nameLocation": "140:6:3",
+                "nameLocation": "179:6:3",
                 "nodeType": "EnumValue",
-                "src": "140:6:3"
+                "src": "179:6:3"
               },
               {
-                "id": 405,
+                "id": 453,
                 "name": "UNCOMMON",
-                "nameLocation": "152:8:3",
+                "nameLocation": "191:8:3",
                 "nodeType": "EnumValue",
-                "src": "152:8:3"
+                "src": "191:8:3"
               },
               {
-                "id": 406,
+                "id": 454,
                 "name": "RARE",
-                "nameLocation": "166:4:3",
+                "nameLocation": "205:4:3",
                 "nodeType": "EnumValue",
-                "src": "166:4:3"
+                "src": "205:4:3"
               },
               {
-                "id": 407,
+                "id": 455,
                 "name": "EPIC",
-                "nameLocation": "176:4:3",
+                "nameLocation": "215:4:3",
                 "nodeType": "EnumValue",
-                "src": "176:4:3"
+                "src": "215:4:3"
               }
             ],
             "name": "Rarity",
-            "nameLocation": "127:6:3",
+            "nameLocation": "166:6:3",
             "nodeType": "EnumDefinition",
-            "src": "122:62:3"
+            "src": "161:62:3"
           },
           {
             "canonicalName": "ISneakerData.Sneaker",
-            "id": 433,
+            "id": 481,
             "members": [
               {
                 "constant": false,
-                "id": 410,
+                "id": 458,
                 "mutability": "mutable",
                 "name": "identifier",
-                "nameLocation": "213:10:3",
+                "nameLocation": "252:10:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "208:15:3",
+                "scope": 481,
+                "src": "247:15:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -143,10 +144,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 409,
+                  "id": 457,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "208:4:3",
+                  "src": "247:4:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -156,33 +157,33 @@
               },
               {
                 "constant": false,
-                "id": 413,
+                "id": 461,
                 "mutability": "mutable",
                 "name": "shoeType",
-                "nameLocation": "238:8:3",
+                "nameLocation": "277:8:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "229:17:3",
+                "scope": 481,
+                "src": "268:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_ShoeType_$403",
+                  "typeIdentifier": "t_enum$_ShoeType_$451",
                   "typeString": "enum ISneakerData.ShoeType"
                 },
                 "typeName": {
-                  "id": 412,
+                  "id": 460,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 411,
+                    "id": 459,
                     "name": "ShoeType",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 403,
-                    "src": "229:8:3"
+                    "referencedDeclaration": 451,
+                    "src": "268:8:3"
                   },
-                  "referencedDeclaration": 403,
-                  "src": "229:8:3",
+                  "referencedDeclaration": 451,
+                  "src": "268:8:3",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_ShoeType_$403",
+                    "typeIdentifier": "t_enum$_ShoeType_$451",
                     "typeString": "enum ISneakerData.ShoeType"
                   }
                 },
@@ -190,33 +191,33 @@
               },
               {
                 "constant": false,
-                "id": 416,
+                "id": 464,
                 "mutability": "mutable",
                 "name": "rarity",
-                "nameLocation": "259:6:3",
+                "nameLocation": "298:6:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "252:13:3",
+                "scope": 481,
+                "src": "291:13:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_Rarity_$408",
+                  "typeIdentifier": "t_enum$_Rarity_$456",
                   "typeString": "enum ISneakerData.Rarity"
                 },
                 "typeName": {
-                  "id": 415,
+                  "id": 463,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 414,
+                    "id": 462,
                     "name": "Rarity",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 408,
-                    "src": "252:6:3"
+                    "referencedDeclaration": 456,
+                    "src": "291:6:3"
                   },
-                  "referencedDeclaration": 408,
-                  "src": "252:6:3",
+                  "referencedDeclaration": 456,
+                  "src": "291:6:3",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Rarity_$408",
+                    "typeIdentifier": "t_enum$_Rarity_$456",
                     "typeString": "enum ISneakerData.Rarity"
                   }
                 },
@@ -224,13 +225,13 @@
               },
               {
                 "constant": false,
-                "id": 418,
+                "id": 466,
                 "mutability": "mutable",
                 "name": "level",
-                "nameLocation": "277:5:3",
+                "nameLocation": "316:5:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "271:11:3",
+                "scope": 481,
+                "src": "310:11:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -238,10 +239,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 417,
+                  "id": 465,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "271:5:3",
+                  "src": "310:5:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -251,13 +252,13 @@
               },
               {
                 "constant": false,
-                "id": 420,
+                "id": 468,
                 "mutability": "mutable",
                 "name": "durability",
-                "nameLocation": "294:10:3",
+                "nameLocation": "333:10:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "288:16:3",
+                "scope": 481,
+                "src": "327:16:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -265,10 +266,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 419,
+                  "id": 467,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "288:5:3",
+                  "src": "327:5:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -278,13 +279,13 @@
               },
               {
                 "constant": false,
-                "id": 422,
+                "id": 470,
                 "mutability": "mutable",
                 "name": "putOn",
-                "nameLocation": "315:5:3",
+                "nameLocation": "354:5:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "310:10:3",
+                "scope": 481,
+                "src": "349:10:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -292,10 +293,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 421,
+                  "id": 469,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "310:4:3",
+                  "src": "349:4:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -305,13 +306,13 @@
               },
               {
                 "constant": false,
-                "id": 424,
+                "id": 472,
                 "mutability": "mutable",
                 "name": "baseEfficiency",
-                "nameLocation": "333:14:3",
+                "nameLocation": "372:14:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "326:21:3",
+                "scope": 481,
+                "src": "365:21:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -319,10 +320,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 423,
+                  "id": 471,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "326:6:3",
+                  "src": "365:6:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -332,13 +333,13 @@
               },
               {
                 "constant": false,
-                "id": 426,
+                "id": 474,
                 "mutability": "mutable",
                 "name": "baseLuck",
-                "nameLocation": "360:8:3",
+                "nameLocation": "399:8:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "353:15:3",
+                "scope": 481,
+                "src": "392:15:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -346,10 +347,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 425,
+                  "id": 473,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "353:6:3",
+                  "src": "392:6:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -359,13 +360,13 @@
               },
               {
                 "constant": false,
-                "id": 428,
+                "id": 476,
                 "mutability": "mutable",
                 "name": "baseComfort",
-                "nameLocation": "381:11:3",
+                "nameLocation": "420:11:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "374:18:3",
+                "scope": 481,
+                "src": "413:18:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -373,10 +374,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 427,
+                  "id": 475,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "374:6:3",
+                  "src": "413:6:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -386,13 +387,13 @@
               },
               {
                 "constant": false,
-                "id": 430,
+                "id": 478,
                 "mutability": "mutable",
                 "name": "baseResiliense",
-                "nameLocation": "405:14:3",
+                "nameLocation": "444:14:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "398:21:3",
+                "scope": 481,
+                "src": "437:21:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -400,10 +401,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 429,
+                  "id": 477,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "398:6:3",
+                  "src": "437:6:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -413,13 +414,13 @@
               },
               {
                 "constant": false,
-                "id": 432,
+                "id": 480,
                 "mutability": "mutable",
                 "name": "pointNum",
-                "nameLocation": "432:8:3",
+                "nameLocation": "471:8:3",
                 "nodeType": "VariableDeclaration",
-                "scope": 433,
-                "src": "425:15:3",
+                "scope": 481,
+                "src": "464:15:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -427,10 +428,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 431,
+                  "id": 479,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "425:6:3",
+                  "src": "464:6:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -440,19 +441,19 @@
               }
             ],
             "name": "Sneaker",
-            "nameLocation": "194:7:3",
+            "nameLocation": "233:7:3",
             "nodeType": "StructDefinition",
-            "scope": 434,
-            "src": "187:258:3",
+            "scope": 482,
+            "src": "226:258:3",
             "visibility": "public"
           }
         ],
-        "scope": 435,
-        "src": "26:421:3",
+        "scope": 483,
+        "src": "65:421:3",
         "usedErrors": []
       }
     ],
-    "src": "0:447:3"
+    "src": "39:447:3"
   },
   "compiler": {
     "name": "solc",
@@ -460,7 +461,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-11T17:16:52.501Z",
+  "updatedAt": "2022-06-11T19:23:46.513Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
