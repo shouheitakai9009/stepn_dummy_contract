@@ -56,7 +56,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -82,7 +83,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -118,7 +120,8 @@
       "name": "createSneaker",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -188,7 +191,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -258,7 +262,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"identifier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enum ISneakerData.ShoeType\",\"name\":\"shoeType\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"enum ISneakerData.Rarity\",\"name\":\"rarity\",\"type\":\"uint8\"}],\"name\":\"NewSneaker\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"enum ISneakerData.ShoeType\",\"name\":\"_shoeType\",\"type\":\"uint8\"},{\"internalType\":\"enum ISneakerData.Rarity\",\"name\":\"_rarity\",\"type\":\"uint8\"}],\"name\":\"createSneaker\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOwnerToSneakers\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"identifier\",\"type\":\"uint256\"},{\"internalType\":\"enum ISneakerData.ShoeType\",\"name\":\"shoeType\",\"type\":\"uint8\"},{\"internalType\":\"enum ISneakerData.Rarity\",\"name\":\"rarity\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"level\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"durability\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"putOn\",\"type\":\"bool\"},{\"internalType\":\"uint32\",\"name\":\"baseEfficiency\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseLuck\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseComfort\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseResiliense\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"pointNum\",\"type\":\"uint32\"}],\"internalType\":\"struct ISneakerData.Sneaker[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSneakers\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"identifier\",\"type\":\"uint256\"},{\"internalType\":\"enum ISneakerData.ShoeType\",\"name\":\"shoeType\",\"type\":\"uint8\"},{\"internalType\":\"enum ISneakerData.Rarity\",\"name\":\"rarity\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"level\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"durability\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"putOn\",\"type\":\"bool\"},{\"internalType\":\"uint32\",\"name\":\"baseEfficiency\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseLuck\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseComfort\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"baseResiliense\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"pointNum\",\"type\":\"uint32\"}],\"internalType\":\"struct ISneakerData.Sneaker[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"sneakerToOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SneakerFactory.sol\":\"SneakerFactory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981\",\"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/contracts/SneakerFactory.sol\":{\"keccak256\":\"0x8b95678c1328977d9869a42808ee2bf69a927a947de3ce9abd5741f4369cbf53\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c4528a317ec4e113008f473dfdce25013e99b5f4a614b13640b41c294ab0a207\",\"dweb:/ipfs/QmQ5qdUZvn9JHMK69qqxA1gguGNE5bUiQPq3B4pxZJZ62d\"]},\"project:/contracts/interface/ISneakerData.sol\":{\"keccak256\":\"0xe5babe194d898b89eda553cf834278afe05c425b9da715609fe2bb26a016f12c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ad7034104769a20d4043fb4ad8cff3bc5a9796e9180a024189627fae1dd16dd3\",\"dweb:/ipfs/QmVZrxarZ3bERKaCYpaTiZw6LTcptUQXAss3xt8jNiJCtQ\"]},\"project:/contracts/utility/GenerateRandom.sol\":{\"keccak256\":\"0xb6af3257b74a5372b07652b3c6f5634d8f0071b579ee614036de36a71a121fbe\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e610b5f9ebc52c00b99a41672ce6d71ca1244e655e2f61c04dc6fc2a366022a0\",\"dweb:/ipfs/QmZuxZQAfZUguYtv2JEWjMAPv2jmrtCdcA7fVFRTbYh2r7\"]}},\"version\":1}",
@@ -13715,15 +13720,41 @@
           ],
           "name": "OwnershipTransferred",
           "type": "event"
+        },
+        "0x6a8c59da79afe08e9e21105b96ace9e15b03412ae0b524de35e6aaf93985f3a4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "identifier",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "enum ISneakerData.ShoeType",
+              "name": "shoeType",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "enum ISneakerData.Rarity",
+              "name": "rarity",
+              "type": "uint8"
+            }
+          ],
+          "name": "NewSneaker",
+          "type": "event"
         }
       },
       "links": {},
-      "address": "0x4E09D557ec81A00EC3E27c48f6c238CEe6847b87",
-      "transactionHash": "0x284c4fccfa2fb570420463c193f19fc8b9b2f02d4a9824c61dd460438b259244"
+      "address": "0x67D3b8683F9F217AC617bb9448552833dea6505c",
+      "transactionHash": "0xf73eee20456f7ffd2db42f8cdcc778307c41f45d7863ea2c6c718eb7b9aabc3b"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-11T19:23:46.507Z",
+  "updatedAt": "2022-06-11T19:25:02.437Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
