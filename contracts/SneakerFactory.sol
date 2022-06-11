@@ -3,8 +3,9 @@ pragma solidity ^0.8.14;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import { ISneakerData } from "./interface/ISneakerData.sol";
+import { GenerateRandom } from "./utility/GenerateRandom.sol";
 
-contract SneakerFactory is Ownable {
+contract SneakerFactory is Ownable, GenerateRandom {
 
   event NewSneaker(uint identifier, ISneakerData.ShoeType shoeType, ISneakerData.Rarity rarity);
 
@@ -24,9 +25,10 @@ contract SneakerFactory is Ownable {
     _;
   }
 
-  ISneakerData.Sneaker[] private sneakers;
+  ISneakerData.Sneaker[] private _sneakers;
 
   mapping (uint => address) public sneakerToOwner;
+  mapping (address => ISneakerData.Sneaker[]) private _ownerToSneakers;
 
   function _createSneaker(
     uint _identifier,
@@ -42,13 +44,14 @@ contract SneakerFactory is Ownable {
       0,
       100,
       true,
-      _generateStatusBasedOnRarity(_identifier, _rarity),
-      _generateStatusBasedOnRarity(_identifier, _rarity),
-      _generateStatusBasedOnRarity(_identifier, _rarity),
-      _generateStatusBasedOnRarity(_identifier, _rarity),
+      _generateStatusBasedOnRarity(_rarity),
+      _generateStatusBasedOnRarity(_rarity),
+      _generateStatusBasedOnRarity(_rarity),
+      _generateStatusBasedOnRarity(_rarity),
       0
     );
-    sneakers.push(_newSneaker);
+    _sneakers.push(_newSneaker);
+    _ownerToSneakers[msg.sender].push(_newSneaker);
     sneakerToOwner[_identifier] = msg.sender;
     emit NewSneaker(_identifier, _shoeType, _rarity);
   }
@@ -62,23 +65,18 @@ contract SneakerFactory is Ownable {
     return rand % (10 ** 16);
   }
 
-  function _generateStatusBasedOnRarity(
-    uint _identifier,
-    ISneakerData.Rarity _rarity
-  )
+  function _generateStatusBasedOnRarity(ISneakerData.Rarity _rarity)
     private
-    pure
     returns (uint32)
   {
-    uint random = uint(keccak256(abi.encode(_identifier)));
     if (_rarity == ISneakerData.Rarity.COMMON) {
-      return uint32(random % 10 + 1);
-    } else if (_rarity == ISneakerData.Rarity.COMMON) {
-      return uint32(random % 18 + 8);
-    } else if (_rarity == ISneakerData.Rarity.COMMON) {
-      return uint32(random % 35 + 15);
-    } else if (_rarity == ISneakerData.Rarity.COMMON) {
-      return uint32(random % 28 + 63);
+      return GenerateRandom._generateRandomNumber(10, 1);
+    } else if (_rarity == ISneakerData.Rarity.UNCOMMON) {
+      return _generateRandomNumber(18, 8);
+    } else if (_rarity == ISneakerData.Rarity.RARE) {
+      return _generateRandomNumber(35, 15);
+    } else if (_rarity == ISneakerData.Rarity.EPIC) {
+      return _generateRandomNumber(63, 28);
     }
     return uint32(0);
   }
@@ -104,6 +102,15 @@ contract SneakerFactory is Ownable {
     onlyOwner
     returns (ISneakerData.Sneaker[] memory)
   {
-    return sneakers;
+    return _sneakers;
+  }
+
+  function getOwnerToSneakers()
+    public
+    view
+    onlyOwner
+    returns (ISneakerData.Sneaker[] memory)
+  {
+    return _ownerToSneakers[msg.sender];
   }
 }
