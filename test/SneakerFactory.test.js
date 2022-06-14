@@ -6,7 +6,7 @@ contract("SneakerFactory", accounts => {
 
   describe("靴を作成する", async () => {
 
-    let [identifier, shoeType, shoeRarity] = []
+    let [tokenId, shoeType, shoeRarity] = []
   
     beforeEach(async () => {
       sneakerInstance = await SneakerFactory.new();
@@ -14,7 +14,7 @@ contract("SneakerFactory", accounts => {
       await sneakerInstance.createSneaker(0, 1, { from: alice });
       await sneakerInstance.createSneaker(0, 2, { from: alice });
       await sneakerInstance.createSneaker(0, 3, { from: alice });
-      identifier = result.logs[0].args.identifier;
+      tokenId = result.logs[0].args.tokenId;
       shoeType = result.logs[0].args.shoeType;
       shoeRarity = result.logs[0].args.rarity;
     })
@@ -25,7 +25,7 @@ contract("SneakerFactory", accounts => {
       assert.equal(shoeType, 0)
     })
     it("靴の作成者が間違いなくオーナーであること", async () => {
-      const owner = await sneakerInstance.sneakerToOwner(identifier);
+      const owner = await sneakerInstance.sneakerToOwner(tokenId);
       assert.equal(owner, alice)
     })
     it("オーナーが保持する靴数が1になっていること", async () => {

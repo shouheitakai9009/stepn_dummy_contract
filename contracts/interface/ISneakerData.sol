@@ -15,7 +15,7 @@ interface ISneakerData {
     EPIC
   }
   struct Sneaker {
-    uint identifier;
+    uint256 tokenId;
     ShoeType shoeType;
     Rarity rarity;
     uint8 level;
@@ -32,7 +32,7 @@ interface ISneakerData {
     uint32 resiliense;
     uint32 pointNum;
     bool minted;
-    uint mintedFromIdentifier1;
-    uint mintedFromIdentifier2;
+    uint256 mintedFromTokenId1;
+    uint256 mintedFromTokenId2;
   }
 }
