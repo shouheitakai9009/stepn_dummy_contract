@@ -1,0 +1,250 @@
+{
+  "contractName": "IUserData",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interface/IUserData.sol\":\"IUserData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interface/IUserData.sol\":{\"keccak256\":\"0xd641200cc69c9d5ac0a092abb1b881b7800d12d96f7cf7a0c7d34b9a1d2ac68e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://7d87f0f0c6f1e712ac962f009f8fc0e874a58dd81dcbe93d4950b5cd375b83ef\",\"dweb:/ipfs/QmePy8t9gKZYtL5KJe1v5SvKzdn5g1TaJPB4PYKZz93MrH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.14;\n\ninterface IUserData {\n  struct User {\n    uint256 userId;\n    string name;\n    bool isMale;\n    string email;\n    string password;\n    uint8 avatorId;\n  }\n}",
+  "sourcePath": "/Users/takaishouhei/Desktop/stepn_dummy_contract/contracts/interface/IUserData.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interface/IUserData.sol",
+    "exportedSymbols": {
+      "IUserData": [
+        2188
+      ]
+    },
+    "id": 2189,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2174,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".14"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IUserData",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 2188,
+        "linearizedBaseContracts": [
+          2188
+        ],
+        "name": "IUserData",
+        "nameLocation": "75:9:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IUserData.User",
+            "id": 2187,
+            "members": [
+              {
+                "constant": false,
+                "id": 2176,
+                "mutability": "mutable",
+                "name": "userId",
+                "nameLocation": "115:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "107:14:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2175,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "107:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2178,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "134:4:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "127:11:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2177,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "127:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2180,
+                "mutability": "mutable",
+                "name": "isMale",
+                "nameLocation": "149:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "144:11:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 2179,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "144:4:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2182,
+                "mutability": "mutable",
+                "name": "email",
+                "nameLocation": "168:5:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "161:12:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2181,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "161:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2184,
+                "mutability": "mutable",
+                "name": "password",
+                "nameLocation": "186:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "179:15:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2183,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "179:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2186,
+                "mutability": "mutable",
+                "name": "avatorId",
+                "nameLocation": "206:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 2187,
+                "src": "200:14:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 2185,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "200:5:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "User",
+            "nameLocation": "96:4:14",
+            "nodeType": "StructDefinition",
+            "scope": 2188,
+            "src": "89:130:14",
+            "visibility": "public"
+          }
+        ],
+        "scope": 2189,
+        "src": "65:156:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:182:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.14+commit.80d49f37.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-14T14:59:53.321Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

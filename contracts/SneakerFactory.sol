@@ -8,7 +8,12 @@ import { ISneakerData } from "./interface/ISneakerData.sol";
 import { GenerateRandom } from "./utility/GenerateRandom.sol";
 import { Validator } from "./utility/Validator.sol";
 
-contract SneakerFactory is Ownable, ERC721("Stepn dummu sneaker", "SDS"), GenerateRandom {
+contract SneakerFactory is
+  ERC721("Stepn dummu sneaker", "SDS"),
+  Ownable,
+  GenerateRandom,
+  Validator
+{
   using Counters for Counters.Counter;
 
   // @dev 変数宣言
@@ -20,25 +25,22 @@ contract SneakerFactory is Ownable, ERC721("Stepn dummu sneaker", "SDS"), Genera
   // @dev Event宣言
   event NewSneaker(uint256 tokenId, ISneakerData.ShoeType shoeType, ISneakerData.Rarity rarity);
 
-  function _createSneaker(
-    ISneakerData.ShoeType _shoeType,
-    ISneakerData.Rarity _rarity
-  ) private {
+  function _createSneaker(ISneakerData.ShoeType _shoeType, ISneakerData.Rarity _rarity) private {
 
-    uint256 newId = _tokenIds.current(); // Unique Token ID
+    uint256 newTokenId = _tokenIds.current(); // Unique Token ID
     uint32 efficiency = _generateStatusBasedOnRarity(_rarity);
     uint32 luck = _generateStatusBasedOnRarity(_rarity);
     uint32 comfort = _generateStatusBasedOnRarity(_rarity);
     uint32 resiliense = _generateStatusBasedOnRarity(_rarity);
 
     // @dev Original new sneaker instance
-    ISneakerData.Sneaker memory _newSneaker = ISneakerData.Sneaker(newId, _shoeType, _rarity, 0, 100, 0, true, efficiency, luck, comfort, resiliense, efficiency, luck, comfort, resiliense, 0, false, 0, 0);
+    ISneakerData.Sneaker memory _newSneaker = ISneakerData.Sneaker(newTokenId, _shoeType, _rarity, 0, 100, 0, true, efficiency, luck, comfort, resiliense, efficiency, luck, comfort, resiliense, 0, false, 0, 0);
 
     _sneakers.push(_newSneaker);
     _ownerToSneakers[msg.sender].push(_newSneaker);
-    sneakerToOwner[newId] = msg.sender;
+    sneakerToOwner[newTokenId] = msg.sender;
+    emit NewSneaker(newTokenId, _shoeType, _rarity);
     _tokenIds.increment();
-    emit NewSneaker(newId, _shoeType, _rarity);
   }
 
   function _generateStatusBasedOnRarity(ISneakerData.Rarity _rarity) private returns (uint32) {
@@ -54,15 +56,12 @@ contract SneakerFactory is Ownable, ERC721("Stepn dummu sneaker", "SDS"), Genera
     return uint32(0);
   }
 
-  function createSneaker(
-    ISneakerData.ShoeType _shoeType,
-    ISneakerData.Rarity _rarity
-  )
+  function createSneaker(ISneakerData.ShoeType _shoeType, ISneakerData.Rarity _rarity)
     public
     payable
     onlyOwner
-    Validator.shoeType(_shoeType)
-    Validator.rarity(_rarity)
+    validateShoeType(_shoeType)
+    validateRarity(_rarity)
   {
     _createSneaker( _shoeType, _rarity);
   }

@@ -1,7 +1,7 @@
 {
   "contractName": "ISneakerData",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interface/ISneakerData.sol\":\"ISneakerData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interface/ISneakerData.sol\":{\"keccak256\":\"0xe5babe194d898b89eda553cf834278afe05c425b9da715609fe2bb26a016f12c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ad7034104769a20d4043fb4ad8cff3bc5a9796e9180a024189627fae1dd16dd3\",\"dweb:/ipfs/QmVZrxarZ3bERKaCYpaTiZw6LTcptUQXAss3xt8jNiJCtQ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interface/ISneakerData.sol\":\"ISneakerData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interface/ISneakerData.sol\":{\"keccak256\":\"0xead8cf5e833ec45ca3b4adbb15f3d7200dbfa2da14d29e09cc18022fb0b707ab\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2003c3fab9431565ea9208440782607845429123c5289bbfb5bd57c9de2e47c1\",\"dweb:/ipfs/QmUGc1EaZKLkgypvkuhT9ammcKerKMWC7CNM2km9ECsvDg\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -9,21 +9,21 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.14;\n\ninterface ISneakerData {\n  enum ShoeType {\n    WAKER,\n    JOGGER,\n    RUNNER,\n    TRAINER\n  }\n  enum Rarity {\n    COMMON,\n    UNCOMMON,\n    RARE,\n    EPIC\n  }\n  struct Sneaker {\n    uint identifier;\n    ShoeType shoeType;\n    Rarity rarity;\n    uint8 level;\n    uint8 durability;\n    bool putOn;\n    uint32 baseEfficiency;\n    uint32 baseLuck;\n    uint32 baseComfort;\n    uint32 baseResiliense;\n    uint32 pointNum;\n  }\n}",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.14;\n\ninterface ISneakerData {\n  enum ShoeType {\n    WAKER,\n    JOGGER,\n    RUNNER,\n    TRAINER\n  }\n  enum Rarity {\n    COMMON,\n    UNCOMMON,\n    RARE,\n    EPIC\n  }\n  struct Sneaker {\n    uint256 tokenId;\n    ShoeType shoeType;\n    Rarity rarity;\n    uint8 level;\n    uint8 durability;\n    uint8 mintCount;\n    bool putOn;\n    uint32 baseEfficiency;\n    uint32 baseLuck;\n    uint32 baseComfort;\n    uint32 baseResiliense;\n    uint32 efficiency;\n    uint32 luck;\n    uint32 comfort;\n    uint32 resiliense;\n    uint32 pointNum;\n    bool minted;\n    uint256 mintedFromTokenId1;\n    uint256 mintedFromTokenId2;\n  }\n}",
   "sourcePath": "/Users/takaishouhei/Desktop/stepn_dummy_contract/contracts/interface/ISneakerData.sol",
   "ast": {
     "absolutePath": "project:/contracts/interface/ISneakerData.sol",
     "exportedSymbols": {
       "ISneakerData": [
-        482
+        2080
       ]
     },
-    "id": 483,
+    "id": 2081,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 446,
+        "id": 2028,
         "literals": [
           "solidity",
           "^",
@@ -31,7 +31,7 @@
           ".14"
         ],
         "nodeType": "PragmaDirective",
-        "src": "39:24:3"
+        "src": "39:24:12"
       },
       {
         "abstract": false,
@@ -40,103 +40,103 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 482,
+        "id": 2080,
         "linearizedBaseContracts": [
-          482
+          2080
         ],
         "name": "ISneakerData",
-        "nameLocation": "75:12:3",
+        "nameLocation": "75:12:12",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ISneakerData.ShoeType",
-            "id": 451,
+            "id": 2033,
             "members": [
               {
-                "id": 447,
+                "id": 2029,
                 "name": "WAKER",
-                "nameLocation": "112:5:3",
+                "nameLocation": "112:5:12",
                 "nodeType": "EnumValue",
-                "src": "112:5:3"
+                "src": "112:5:12"
               },
               {
-                "id": 448,
+                "id": 2030,
                 "name": "JOGGER",
-                "nameLocation": "123:6:3",
+                "nameLocation": "123:6:12",
                 "nodeType": "EnumValue",
-                "src": "123:6:3"
+                "src": "123:6:12"
               },
               {
-                "id": 449,
+                "id": 2031,
                 "name": "RUNNER",
-                "nameLocation": "135:6:3",
+                "nameLocation": "135:6:12",
                 "nodeType": "EnumValue",
-                "src": "135:6:3"
+                "src": "135:6:12"
               },
               {
-                "id": 450,
+                "id": 2032,
                 "name": "TRAINER",
-                "nameLocation": "147:7:3",
+                "nameLocation": "147:7:12",
                 "nodeType": "EnumValue",
-                "src": "147:7:3"
+                "src": "147:7:12"
               }
             ],
             "name": "ShoeType",
-            "nameLocation": "97:8:3",
+            "nameLocation": "97:8:12",
             "nodeType": "EnumDefinition",
-            "src": "92:66:3"
+            "src": "92:66:12"
           },
           {
             "canonicalName": "ISneakerData.Rarity",
-            "id": 456,
+            "id": 2038,
             "members": [
               {
-                "id": 452,
+                "id": 2034,
                 "name": "COMMON",
-                "nameLocation": "179:6:3",
+                "nameLocation": "179:6:12",
                 "nodeType": "EnumValue",
-                "src": "179:6:3"
+                "src": "179:6:12"
               },
               {
-                "id": 453,
+                "id": 2035,
                 "name": "UNCOMMON",
-                "nameLocation": "191:8:3",
+                "nameLocation": "191:8:12",
                 "nodeType": "EnumValue",
-                "src": "191:8:3"
+                "src": "191:8:12"
               },
               {
-                "id": 454,
+                "id": 2036,
                 "name": "RARE",
-                "nameLocation": "205:4:3",
+                "nameLocation": "205:4:12",
                 "nodeType": "EnumValue",
-                "src": "205:4:3"
+                "src": "205:4:12"
               },
               {
-                "id": 455,
+                "id": 2037,
                 "name": "EPIC",
-                "nameLocation": "215:4:3",
+                "nameLocation": "215:4:12",
                 "nodeType": "EnumValue",
-                "src": "215:4:3"
+                "src": "215:4:12"
               }
             ],
             "name": "Rarity",
-            "nameLocation": "166:6:3",
+            "nameLocation": "166:6:12",
             "nodeType": "EnumDefinition",
-            "src": "161:62:3"
+            "src": "161:62:12"
           },
           {
             "canonicalName": "ISneakerData.Sneaker",
-            "id": 481,
+            "id": 2079,
             "members": [
               {
                 "constant": false,
-                "id": 458,
+                "id": 2040,
                 "mutability": "mutable",
-                "name": "identifier",
-                "nameLocation": "252:10:3",
+                "name": "tokenId",
+                "nameLocation": "255:7:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "247:15:3",
+                "scope": 2079,
+                "src": "247:15:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -144,10 +144,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 457,
-                  "name": "uint",
+                  "id": 2039,
+                  "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "247:4:3",
+                  "src": "247:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -157,33 +157,33 @@
               },
               {
                 "constant": false,
-                "id": 461,
+                "id": 2043,
                 "mutability": "mutable",
                 "name": "shoeType",
-                "nameLocation": "277:8:3",
+                "nameLocation": "277:8:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "268:17:3",
+                "scope": 2079,
+                "src": "268:17:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_ShoeType_$451",
+                  "typeIdentifier": "t_enum$_ShoeType_$2033",
                   "typeString": "enum ISneakerData.ShoeType"
                 },
                 "typeName": {
-                  "id": 460,
+                  "id": 2042,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 459,
+                    "id": 2041,
                     "name": "ShoeType",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 451,
-                    "src": "268:8:3"
+                    "referencedDeclaration": 2033,
+                    "src": "268:8:12"
                   },
-                  "referencedDeclaration": 451,
-                  "src": "268:8:3",
+                  "referencedDeclaration": 2033,
+                  "src": "268:8:12",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_ShoeType_$451",
+                    "typeIdentifier": "t_enum$_ShoeType_$2033",
                     "typeString": "enum ISneakerData.ShoeType"
                   }
                 },
@@ -191,33 +191,33 @@
               },
               {
                 "constant": false,
-                "id": 464,
+                "id": 2046,
                 "mutability": "mutable",
                 "name": "rarity",
-                "nameLocation": "298:6:3",
+                "nameLocation": "298:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "291:13:3",
+                "scope": 2079,
+                "src": "291:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_Rarity_$456",
+                  "typeIdentifier": "t_enum$_Rarity_$2038",
                   "typeString": "enum ISneakerData.Rarity"
                 },
                 "typeName": {
-                  "id": 463,
+                  "id": 2045,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 462,
+                    "id": 2044,
                     "name": "Rarity",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 456,
-                    "src": "291:6:3"
+                    "referencedDeclaration": 2038,
+                    "src": "291:6:12"
                   },
-                  "referencedDeclaration": 456,
-                  "src": "291:6:3",
+                  "referencedDeclaration": 2038,
+                  "src": "291:6:12",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Rarity_$456",
+                    "typeIdentifier": "t_enum$_Rarity_$2038",
                     "typeString": "enum ISneakerData.Rarity"
                   }
                 },
@@ -225,13 +225,13 @@
               },
               {
                 "constant": false,
-                "id": 466,
+                "id": 2048,
                 "mutability": "mutable",
                 "name": "level",
-                "nameLocation": "316:5:3",
+                "nameLocation": "316:5:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "310:11:3",
+                "scope": 2079,
+                "src": "310:11:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -239,10 +239,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 465,
+                  "id": 2047,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "310:5:3",
+                  "src": "310:5:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -252,13 +252,13 @@
               },
               {
                 "constant": false,
-                "id": 468,
+                "id": 2050,
                 "mutability": "mutable",
                 "name": "durability",
-                "nameLocation": "333:10:3",
+                "nameLocation": "333:10:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "327:16:3",
+                "scope": 2079,
+                "src": "327:16:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -266,10 +266,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 467,
+                  "id": 2049,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "327:5:3",
+                  "src": "327:5:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -279,13 +279,40 @@
               },
               {
                 "constant": false,
-                "id": 470,
+                "id": 2052,
+                "mutability": "mutable",
+                "name": "mintCount",
+                "nameLocation": "355:9:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "349:15:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 2051,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "349:5:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2054,
                 "mutability": "mutable",
                 "name": "putOn",
-                "nameLocation": "354:5:3",
+                "nameLocation": "375:5:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "349:10:3",
+                "scope": 2079,
+                "src": "370:10:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -293,10 +320,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 469,
+                  "id": 2053,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "349:4:3",
+                  "src": "370:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -306,13 +333,13 @@
               },
               {
                 "constant": false,
-                "id": 472,
+                "id": 2056,
                 "mutability": "mutable",
                 "name": "baseEfficiency",
-                "nameLocation": "372:14:3",
+                "nameLocation": "393:14:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "365:21:3",
+                "scope": 2079,
+                "src": "386:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -320,10 +347,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 471,
+                  "id": 2055,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "365:6:3",
+                  "src": "386:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -333,13 +360,13 @@
               },
               {
                 "constant": false,
-                "id": 474,
+                "id": 2058,
                 "mutability": "mutable",
                 "name": "baseLuck",
-                "nameLocation": "399:8:3",
+                "nameLocation": "420:8:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "392:15:3",
+                "scope": 2079,
+                "src": "413:15:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -347,10 +374,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 473,
+                  "id": 2057,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "392:6:3",
+                  "src": "413:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -360,13 +387,13 @@
               },
               {
                 "constant": false,
-                "id": 476,
+                "id": 2060,
                 "mutability": "mutable",
                 "name": "baseComfort",
-                "nameLocation": "420:11:3",
+                "nameLocation": "441:11:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "413:18:3",
+                "scope": 2079,
+                "src": "434:18:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -374,10 +401,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 475,
+                  "id": 2059,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "413:6:3",
+                  "src": "434:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -387,13 +414,13 @@
               },
               {
                 "constant": false,
-                "id": 478,
+                "id": 2062,
                 "mutability": "mutable",
                 "name": "baseResiliense",
-                "nameLocation": "444:14:3",
+                "nameLocation": "465:14:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "437:21:3",
+                "scope": 2079,
+                "src": "458:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -401,10 +428,10 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 477,
+                  "id": 2061,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "437:6:3",
+                  "src": "458:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
@@ -414,13 +441,13 @@
               },
               {
                 "constant": false,
-                "id": 480,
+                "id": 2064,
                 "mutability": "mutable",
-                "name": "pointNum",
-                "nameLocation": "471:8:3",
+                "name": "efficiency",
+                "nameLocation": "492:10:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 481,
-                "src": "464:15:3",
+                "scope": 2079,
+                "src": "485:17:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -428,32 +455,221 @@
                   "typeString": "uint32"
                 },
                 "typeName": {
-                  "id": 479,
+                  "id": 2063,
                   "name": "uint32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "464:6:3",
+                  "src": "485:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint32",
                     "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2066,
+                "mutability": "mutable",
+                "name": "luck",
+                "nameLocation": "515:4:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "508:11:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 2065,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "508:6:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2068,
+                "mutability": "mutable",
+                "name": "comfort",
+                "nameLocation": "532:7:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "525:14:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 2067,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "525:6:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2070,
+                "mutability": "mutable",
+                "name": "resiliense",
+                "nameLocation": "552:10:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "545:17:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 2069,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "545:6:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2072,
+                "mutability": "mutable",
+                "name": "pointNum",
+                "nameLocation": "575:8:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "568:15:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 2071,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "568:6:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2074,
+                "mutability": "mutable",
+                "name": "minted",
+                "nameLocation": "594:6:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "589:11:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 2073,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "589:4:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2076,
+                "mutability": "mutable",
+                "name": "mintedFromTokenId1",
+                "nameLocation": "614:18:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "606:26:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2075,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "606:7:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2078,
+                "mutability": "mutable",
+                "name": "mintedFromTokenId2",
+                "nameLocation": "646:18:12",
+                "nodeType": "VariableDeclaration",
+                "scope": 2079,
+                "src": "638:26:12",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2077,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "638:7:12",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   }
                 },
                 "visibility": "internal"
               }
             ],
             "name": "Sneaker",
-            "nameLocation": "233:7:3",
+            "nameLocation": "233:7:12",
             "nodeType": "StructDefinition",
-            "scope": 482,
-            "src": "226:258:3",
+            "scope": 2080,
+            "src": "226:443:12",
             "visibility": "public"
           }
         ],
-        "scope": 483,
-        "src": "65:421:3",
+        "scope": 2081,
+        "src": "65:606:12",
         "usedErrors": []
       }
     ],
-    "src": "39:447:3"
+    "src": "39:632:12"
   },
   "compiler": {
     "name": "solc",
@@ -461,7 +677,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-11T19:23:46.513Z",
+  "updatedAt": "2022-06-14T14:08:38.500Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
